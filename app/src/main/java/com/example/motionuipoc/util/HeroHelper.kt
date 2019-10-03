@@ -1,11 +1,23 @@
 package com.example.motionuipoc.util
 
+import com.example.motionuipoc.model.Car
+
 object HeroHelper {
-    private const val CAR_TRANSITION_NAME_PREFIX = "car"
-    private const val CARD_TRANSITION_NAME_PREFIX = "card"
+    private const val CAR_TRANSITION_NAME_PREFIX = "car_"
+    private const val CARD_TRANSITION_NAME_PREFIX = "card_"
+    private const val LOGO_TRANSITION_NAME_PREFIX = "logo_"
+    private const val MORE_INFO_TRANSITION_NAME_PREFIX = "more_info_"
 
-    fun getCarHero(position: Int): String = CAR_TRANSITION_NAME_PREFIX + position
+    @JvmStatic
+    fun getCarImageHero(car: Car?): String? = car?.let { CAR_TRANSITION_NAME_PREFIX + it.id }
 
-    fun getCardHero(position: Int): String = CARD_TRANSITION_NAME_PREFIX + position
+    @JvmStatic
+    fun getLogoImageHero(car: Car?): String? = car?.let { LOGO_TRANSITION_NAME_PREFIX + it.id }
+
+    @JvmStatic
+    fun getCardHero(car: Car?): String? = car?.let { CARD_TRANSITION_NAME_PREFIX + it.id }
+
+    @JvmStatic
+    fun getMoreInfoHero(car: Car?): String? = car?.let { MORE_INFO_TRANSITION_NAME_PREFIX + it.id }
 
 }

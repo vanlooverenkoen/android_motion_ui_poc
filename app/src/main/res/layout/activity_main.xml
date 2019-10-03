@@ -7,8 +7,11 @@
     <data>
 
         <variable
-            name="carTransitionName"
-            type="String" />
+            name="car"
+            type="com.example.motionuipoc.model.Car" />
+
+        <import type="com.example.motionuipoc.util.HeroHelper" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +25,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.73" />
-
 
         <ImageView
             android:id="@+id/background"
@@ -39,16 +41,17 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
-            android:id="@+id/car"
+            android:id="@+id/car_image"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="fitEnd"
-            android:src="@drawable/bmw"
+            app:imagesRes="@{car.carImage}"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/header_framelayout"
-            app:transitionName="@{carTransitionName}" />
+            app:transitionName="@{HeroHelper.getCarImageHero(car)}"
+            tools:src="@drawable/bmw" />
 
         <FrameLayout
             android:id="@+id/header_framelayout"
@@ -61,6 +64,7 @@
             <include
                 android:id="@+id/header_include"
                 layout="@layout/view_header" />
+
         </FrameLayout>
 
 

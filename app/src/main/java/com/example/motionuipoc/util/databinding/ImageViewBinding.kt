@@ -9,6 +9,12 @@ object ImageViewBinding {
     @JvmStatic
     @BindingAdapter("imagesRes")
     fun bindAsyncImage(imageView: ImageView, @DrawableRes imagesRes: Int) {
+        if (imagesRes == 0) {
+            Picasso.get().cancelRequest(imageView)
+            imageView.setImageDrawable(null)
+            return
+        }
+
         Picasso.get()
             .load(imagesRes)
             .fit()

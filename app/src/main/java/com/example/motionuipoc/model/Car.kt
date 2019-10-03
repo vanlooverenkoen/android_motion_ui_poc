@@ -3,6 +3,7 @@ package com.example.motionuipoc.model
 import androidx.annotation.DrawableRes
 
 class Car(
+    val id: String,
     val model: String,
     val quote: String,
     val manufacturer: String,

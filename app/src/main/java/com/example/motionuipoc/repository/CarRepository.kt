@@ -10,6 +10,7 @@ class CarRepository {
             val list = mutableListOf<Car>()
             list.add(
                 Car(
+                    "BMW_I8",
                     "i8",
                     "BMW",
                     "Sporty",
@@ -20,6 +21,7 @@ class CarRepository {
             )
             list.add(
                 Car(
+                    "TESLA_MODEL_X",
                     "Model X",
                     "Tesla",
                     "Elon",
@@ -30,6 +32,7 @@ class CarRepository {
             )
             list.add(
                 Car(
+                    "AM_VIRAGE",
                     "Virage",
                     "Bond, James Bond",
                     "Aston Martin",
